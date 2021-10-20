@@ -70,6 +70,9 @@ class NewItemFormComponent extends React.Component {
             .catch(error => {
                 console.error('There was an error!', error);
             })
+
+        // switched back to the inventory screen
+        this.props.changeScreens();
     }
 
     render() {
@@ -77,58 +80,99 @@ class NewItemFormComponent extends React.Component {
         return(
             <div>
                 <h2 className='add-screen-title'>Add New Items</h2>
-                <form onSubmit={(e) => this.handleNewItemSubmit(e)}>
-                    <label>
-                        Item Name: 
-                        <input
-                            type='text'
-                            placeholder='enter item name here'
-                            value={this.state.itemNameFieldValue}
-                            onChange={e => this.handleNameFieldChange(e)}
-                        />
-                    </label>
-                    <br/>
-                    <label>
-                        Item Price: 
-                        <input
-                            type='text'
-                            placeholder='enter price of item here'
-                            value={this.state.itemPriceFieldValue}
-                            onChange={e => this.handlePriceFieldChange(e)}
-                        />
-                    </label>
-                    <br/>
-                    <label>
-                        Item Size: 
-                        <input
-                            type='text'
-                            placeholder='enter size of item here'
-                            value={this.state.itemSizeFieldValue}
-                            onChange={e => this.handleSizeFieldChange(e)}
-                        />
-                    </label>
-                    <br/>
-                    <label>
-                        Item Quantity: 
-                        <input
-                            type='text'
-                            placeholder='enter quantity of item here'
-                            value={this.state.itemQuantityFieldValue}
-                            onChange={e => this.handleQuantityFieldChange(e)}
-                        />
-                    </label>
-                    <br/>
-                    <label>
-                        Item Source: 
-                        <input
-                            type='text'
-                            placeholder='enter source of item here'
-                            value={this.state.itemSoruceFieldValue}
-                            onChange={e => this.handleSourceFieldChange(e)}
-                        />
-                    </label>
-                    <br/>
-                    <input type='submit'/>
+                <form 
+                    onSubmit={(e) => this.handleNewItemSubmit(e)}
+                    className='form-control form-horizontal'
+                >
+                    <div className='form-group row'>
+                        <div className='form-group col-sm-2'>
+                            <label className='control-label'>
+                                Item Name: 
+                            </label>
+                        </div>
+                        <div className='form-group col-sm-10'>
+                            <input
+                                type='text'
+                                placeholder='enter item name here'
+                                value={this.state.itemNameFieldValue}
+                                onChange={e => this.handleNameFieldChange(e)}
+                                className='form-control'
+                                required='required'
+                            />
+                        </div>
+                    </div>
+                    <div className='form-group row'>
+                        <div className='form-group col-sm-2'>
+                            <label className='control-label'>
+                                Item Price: 
+                            </label>
+                        </div>
+                        <div className='form-group col-sm-10'>
+                            <input
+                                type='text'
+                                placeholder='enter price of item here'
+                                value={this.state.itemPriceFieldValue}
+                                onChange={e => this.handlePriceFieldChange(e)}
+                                className='form-control'
+                                required='required'
+                            />
+                        </div>
+                    </div>
+                    <div className='form-group row'>
+                        <div className='form-group col-sm-2'>
+                            <label className='control-label'>
+                                Item Size: 
+                            </label>
+                        </div>
+                        <div className='form-group col-sm-10'>
+                            <input
+                                type='text'
+                                placeholder='enter size of item here'
+                                value={this.state.itemSizeFieldValue}
+                                onChange={e => this.handleSizeFieldChange(e)}
+                                className='form-control'
+                                required='required'
+                            />
+                        </div>
+                    </div>
+                    <div className='form-group row'>
+                        <div className='form-group col-sm-2'>
+                            <label className='control-label'>
+                                Item Quantity: 
+                            </label>
+                        </div>
+                        <div className='form-group col-sm-10'>
+                            <input
+                                type='text'
+                                placeholder='enter quantity of item here'
+                                value={this.state.itemQuantityFieldValue}
+                                onChange={e => this.handleQuantityFieldChange(e)}
+                                className='form-control'
+                                required='required'
+                            />
+                        </div>
+                    </div>
+                    <div className='form-group row'>
+                        <div className='form-group col-sm-2'>
+                            <label className='control-label'>
+                                Item Source: 
+                            </label>
+                        </div>
+                        <div className='form-group col-sm-10'>
+                            <input
+                                type='text'
+                                placeholder='enter source of item here'
+                                value={this.state.itemSoruceFieldValue}
+                                onChange={e => this.handleSourceFieldChange(e)}
+                                className='form-control'
+                            />
+                        </div>
+                    </div>
+                    <div className='form-group row'>
+                        <div className='form-group col-sm-12'>
+                        <input type='submit' className='form-control btn btn-primary'/>
+                        </div>
+                    </div>
                 </form>
             </div> 
         )

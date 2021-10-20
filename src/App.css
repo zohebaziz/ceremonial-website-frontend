@@ -21,7 +21,12 @@
 
 };
 
-.search-bar {
+.search-label {
 
-    padding-bottom: 1.5%;
+    text-align: center;
+}
+
+.item-caps {
+
+    text-transform: uppercase;
 }
